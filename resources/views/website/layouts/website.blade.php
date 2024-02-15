@@ -1,0 +1,5 @@
+@include('website.layouts.includes.tpl_start')
+@include('website.layouts.includes.navbar')
+@yield('content')
+@include('website.layouts.includes.footer')
+@include('website.layouts.includes.tpl_end')
