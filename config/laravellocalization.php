@@ -6,6 +6,9 @@ return [
     // These are sorted by the native name, which is the order you might show them in a language selector.
     // Regional languages are sorted by their base language, so "British English" sorts as "English, British"
     'supportedLocales' => [
+        'ar'          => ['name' => 'Arabic',                 'script' => 'Arab', 'native' => 'العربية', 'regional' => 'ar_AE'],
+        'en'          => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB'],
+        'fr'          => ['name' => 'French',                 'script' => 'Latn', 'native' => 'français', 'regional' => 'fr_FR'],
         //'ace'         => ['name' => 'Achinese',               'script' => 'Latn', 'native' => 'Aceh', 'regional' => ''],
         //'af'          => ['name' => 'Afrikaans',              'script' => 'Latn', 'native' => 'Afrikaans', 'regional' => 'af_ZA'],
         //'agq'         => ['name' => 'Aghem',                  'script' => 'Latn', 'native' => 'Aghem', 'regional' => ''],
@@ -42,7 +45,6 @@ return [
         //'et'          => ['name' => 'Estonian',               'script' => 'Latn', 'native' => 'eesti', 'regional' => 'et_EE'],
         //'na'          => ['name' => 'Nauru',                  'script' => 'Latn', 'native' => 'Ekakairũ Naoero', 'regional' => ''],
         //'guz'         => ['name' => 'Ekegusii',               'script' => 'Latn', 'native' => 'Ekegusii', 'regional' => ''],
-        'en'          => ['name' => 'English',                'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB'],
         //'en-AU'       => ['name' => 'Australian English',     'script' => 'Latn', 'native' => 'Australian English', 'regional' => 'en_AU'],
         //'en-GB'       => ['name' => 'British English',        'script' => 'Latn', 'native' => 'British English', 'regional' => 'en_GB'],
         //'en-CA'       => ['name' => 'Canadian English',       'script' => 'Latn', 'native' => 'Canadian English', 'regional' => 'en_CA'],
@@ -53,7 +55,6 @@ return [
         //'ewo'         => ['name' => 'Ewondo',                 'script' => 'Latn', 'native' => 'ewondo', 'regional' => ''],
         //'ee'          => ['name' => 'Ewe',                    'script' => 'Latn', 'native' => 'eʋegbe', 'regional' => ''],
         //'fil'         => ['name' => 'Filipino',               'script' => 'Latn', 'native' => 'Filipino', 'regional' => 'fil_PH'],
-        //'fr'          => ['name' => 'French',                 'script' => 'Latn', 'native' => 'français', 'regional' => 'fr_FR'],
         //'fr-CA'       => ['name' => 'Canadian French',        'script' => 'Latn', 'native' => 'français canadien', 'regional' => 'fr_CA'],
         //'fy'          => ['name' => 'Western Frisian',        'script' => 'Latn', 'native' => 'frysk', 'regional' => 'fy_DE'],
         //'fur'         => ['name' => 'Friulian',               'script' => 'Latn', 'native' => 'furlan', 'regional' => 'fur_IT'],
@@ -236,7 +237,7 @@ return [
         //'he'          => ['name' => 'Hebrew',                 'script' => 'Hebr', 'native' => 'עברית', 'regional' => 'he_IL'],
         //'ug'          => ['name' => 'Uyghur',                 'script' => 'Arab', 'native' => 'ئۇيغۇرچە', 'regional' => 'ug_CN'],
         //'ur'          => ['name' => 'Urdu',                   'script' => 'Arab', 'native' => 'اردو', 'regional' => 'ur_PK'],
-        'ar'          => ['name' => 'Arabic',                 'script' => 'Arab', 'native' => 'العربية', 'regional' => 'ar_AE'],
+        
         //'uz-Arab'     => ['name' => 'Uzbek (Arabic)',         'script' => 'Arab', 'native' => 'اۉزبېک', 'regional' => ''],
         //'tg-Arab'     => ['name' => 'Tajik (Arabic)',         'script' => 'Arab', 'native' => 'تاجیکی', 'regional' => 'tg_TJ'],
         //'sd'          => ['name' => 'Sindhi',                 'script' => 'Arab', 'native' => 'سنڌي', 'regional' => 'sd_IN'],
