@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+@if (App::getLocale() == 'ar')
+  <html class="no-js" lang="ar" dir="rtl">
+@else
+  <html class="no-js" lang="en">  
+@endif
 
 <head>
   <meta charset="utf-8" />
@@ -24,6 +28,9 @@
   <link rel="stylesheet" href="{{asset('assets/finshWebsite/exomac/assets/css/vendor/vendor.min.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/finshWebsite/exomac/assets/css/plugins/plugins.min.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/finshWebsite/exomac/assets/css/style.min.css')}}" />
+  @if (App::getLocale() == 'ar')
+    <link rel="stylesheet" href="{{asset('assets/finshWebsite/exomac/assets/css/home_style_ar.css')}}" />
+  @endif
   @yield('css')
 </head>
 

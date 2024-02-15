@@ -63,7 +63,7 @@
                   <li>
                     <a href="#"><span class="menu-text">Contact Us</span></a>
                   </li>
-                  <!-- start test-notification -->
+                  <!-- Start notification -->
                   <li class="has-children">
                     <a href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <span class="menu-text">
@@ -114,26 +114,27 @@
                       </li>
                     </ul>
                   </li>
-                  <!-- end test-notification -->
-                  <!-- start language -->
+                  <!-- End notification -->
+                  <!-- Start Language Switch -->
                   <li class="has-children">
-                    <a href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span class="menu-text">
-                        <i class="fa-solid fa-earth-americas stylesvglang"></i> </span></a>
-                    <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
-                    <ul class="sub-menu">
-                      <li>
-                        <a href="#"><span class="menu-text">English</span></a>
-                      </li>
-                      <li>
-                        <a href="#"><span class="menu-text">French</span></a>
-                      </li>
-                      <li>
-                        <a href="#"><span class="menu-text">العربيه</span></a>
-                      </li>
-                    </ul>
+                      <a href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="menu-text">
+                              <i class="fa-solid fa-earth-americas stylesvglang m-1"></i>
+                              {{ LaravelLocalization::getCurrentLocaleNative() }}
+                          </span>
+                      </a>
+                      <span class="menu-toggle"><i class="far fa-angle-down"></i></span>
+                      <ul class="sub-menu">
+                          @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                              <li>
+                                  <a class="dropdown-item" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                                      {{ $properties['native'] }}
+                                  </a>
+                              </li>
+                          @endforeach
+                      </ul>
                   </li>
-                  <!-- end language -->
+                  <!-- End Language Switch -->
                 </ul>
               </nav>
             </div>
