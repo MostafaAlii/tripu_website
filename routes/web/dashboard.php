@@ -8,7 +8,7 @@ Route::group([
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function () {
         Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
-            Route::get('/', [Dashboard\DashboardController::class, 'index'])->name('admin.dashboard');
+            Route::get('dashboard', [Dashboard\DashboardController::class, 'index'])->name('admin.dashboard');
         });
     });
     require __DIR__.'/../auth.php';
