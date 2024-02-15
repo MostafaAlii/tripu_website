@@ -10,8 +10,12 @@ class Slider extends BaseModel {
     protected $casts = ['status' => 'boolean',];
     public $translatedAttributes = ['title', 'description'];
 
-    public  function status(){
-        echo ($this->status == 0) ?  '<button class="btn btn-outline-danger">'.trans('dashboard/general.not_active').'</button>' : '<button class="btn btn-outline-success">'.trans('dashboard/general.active').'</button>';
+    public function status() {
+        switch ($this->status) {
+            case 0: $result = '<label class="badge badge-warning">' . trans('dashboard/general.not_active') .'</label>'; break;
+            case 1: $result = '<label class="badge badge-success">' . trans('dashboard/general.active') .'</label>'; break;
+        }
+        return $result;
     }
 
      public function admin(): BelongsTo {
