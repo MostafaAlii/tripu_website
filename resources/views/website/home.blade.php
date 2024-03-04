@@ -4,93 +4,66 @@ Trip U
 @endsection
 
 @section('content')
-
-<!-- Slider/Intro Section Start -->
-<div class="intro-slider-wrap section">
-    <div class="intro-slider swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="intro-section section overlay" data-bg-color="#000"
-            data-bg-image="{{asset('assets/finshWebsite/images/cars/trip1.jpg')}}">
-            <div class="container">
-              <div class="row row-cols-lg-1 row-cols-1">
-                <div class="col align-self-center">
-                  <div class="intro-content mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-8">
-                    <h2 class="title">Let’s Rent Your Dream Car Here</h2>
-                    <div class="desc">
-                      <p>
-                        We are the best car rental agency that will help you
-                        find the car you have been dreaming of, let's find
-                        it.
-                      </p>
+@if ($data['sliders'])
+  <!-- Slider/Intro Section Start -->
+  <div class="intro-slider-wrap section">
+      <div class="intro-slider swiper-container">
+        <div class="swiper-wrapper">
+          @forelse ($data['sliders'] as $key => $slider)
+          <div class="swiper-slide">
+            <div class="intro-section section overlay" data-bg-color="#000" data-bg-image="{{ asset($slider->ImagePath()) }}">
+              <div class="container">
+                <div class="row row-cols-lg-1 row-cols-1">
+                  <div class="col align-self-center">
+                    <div class="intro-content mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-8">
+                      <h2 class="title">{{ $slider?->title }}</h2>
+                      <div class="desc">
+                        <p>
+                          {{ $slider?->description }}
+                        </p>
+                      </div>
+                      <a href="#" class="btn btn-primary btn-hover-secondary">Get Started</a>
                     </div>
-                    <a href="aboutUs_en.html" class="btn btn-primary btn-hover-secondary">Get Started</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="intro-section section overlay" data-bg-color="#000"
-            data-bg-image="{{asset('assets/finshWebsite/images/cars/trip2.jpg')}}">
-            <div class="container">
-              <div class="row row-cols-lg-1 row-cols-1">
-                <!-- Intro One Content Start -->
-                <div class="col align-self-center">
-                  <div class="intro-content mt-8">
-                    <h2 class="title">
-                      Do you consult a lot? We are at your service
-                    </h2>
-                    <div class="desc">
-                      <p>
-                        Do you want to move around with a large group of
-                        people? Take TripU flights; We can transport up to
-                        six people per destination.
-                      </p>
+          @empty
+          <div class="swiper-slide">
+            <div class="intro-section section overlay" data-bg-color="#000"
+              data-bg-image="{{asset('assets/finshWebsite/images/default/default_slider.jpg')}}">
+              <div class="container">
+                <div class="row row-cols-lg-1 row-cols-1">
+                  <div class="col align-self-center">
+                    <div class="intro-content mt-xl-8 mt-lg-8 mt-md-8 mt-sm-8 mt-xs-8">
+                      <h2 class="title">Let’s Rent Your Dream Car Here</h2>
+                      <div class="desc">
+                        <p>
+                          We are the best car rental agency that will help you
+                          find the car you have been dreaming of, let's find
+                          it.
+                        </p>
+                      </div>
+                      <a href="aboutUs_en.html" class="btn btn-primary btn-hover-secondary">Get Started</a>
                     </div>
-                    <a href="#" class="btn btn-primary btn-hover-secondary">Get Started</a>
                   </div>
                 </div>
-                <!-- Intro One Content End -->
               </div>
             </div>
           </div>
+          @endforelse
         </div>
-        <div class="swiper-slide">
-          <div class="intro-section section overlay" data-bg-color="#000"
-            data-bg-image="{{asset('assets/finshWebsite/images/cars/trip3.jpg')}}">
-            <div class="container">
-              <div class="row row-cols-lg-1 row-cols-1">
-                <!-- Intro One Content Start -->
-                <div class="col align-self-center max-mb-30">
-                  <div class="intro-content mt-8">
-                    <h2 class="title">Finally, the trips you need</h2>
-                    <div class="desc">
-                      <p>
-                        Find a driver who will accept your quote or accept
-                        the driver's offer instead
-                      </p>
-                    </div>
-                    <a href="#" class="btn btn-primary btn-hover-secondary">Get Started</a>
-                  </div>
-                </div>
-                <!-- Intro One Content End -->
-              </div>
-            </div>
-          </div>
+        <div class="home-slider-prev swiper-button-prev main-slider-nav">
+          <i class="fal fa-angle-left"></i>
+        </div>
+        <div class="home-slider-next swiper-button-next main-slider-nav">
+          <i class="fal fa-angle-right"></i>
         </div>
       </div>
-      <div class="home-slider-prev swiper-button-prev main-slider-nav">
-        <i class="fal fa-angle-left"></i>
-      </div>
-      <div class="home-slider-next swiper-button-next main-slider-nav">
-        <i class="fal fa-angle-right"></i>
-      </div>
-    </div>
-</div>
-<!-- Slider/Intro Section End -->
-
+  </div>
+  <!-- Slider/Intro Section End -->
+@endif
 <!-- About Section Start -->
 <div class="section section-padding">
     <div class="container">

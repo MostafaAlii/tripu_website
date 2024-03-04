@@ -20,13 +20,13 @@ class SliderDataTable extends DataTable {
             ->editColumn('updated_at', function (Slider $slider) {
                 return $slider->created_at->format('Y-m-d');
             })
-            /*->addColumn('image', function (Slider $slider) {
+            ->addColumn('image', function (Slider $slider) {
                 return '<img src="' . $slider->ImagePath() . '" width="100">';
-            })*/
+            })
             ->editColumn('admin_id', function(Slider $slider){
                 return $slider->admin->name;
             })
-        ->rawColumns(['action', 'admin_id', 'status', 'created_at', 'updated_at', /*'image'*/]); 
+        ->rawColumns(['action', 'admin_id', 'status', 'created_at', 'updated_at', 'image']); 
     }
 
     public function query(): QueryBuilder {
@@ -67,7 +67,7 @@ class SliderDataTable extends DataTable {
 		return [
             ['name' => 'id', 'data' => 'id', 'title' => '#','searchable' => false,],
             ['name' => 'title', 'data' => 'title', 'title' => trans('dashboard/slider.title'),],
-            //['name' => 'image', 'data' => 'image', 'title' => 'Image', 'orderable' => false, 'searchable' => false,],
+            ['name' => 'image', 'data' => 'image', 'title' => 'Image', 'orderable' => false, 'searchable' => false,],
             ['name' => 'description', 'data' => 'description', 'title' => trans('dashboard/slider.description'),],
             ['name' => 'status', 'data' => 'status', 'title' => trans('dashboard/general.status'), 'orderable' => false, 'searchable' => false,],
             ['name' => 'admin_id', 'data' => 'admin_id', 'title' => trans('dashboard/general.add_by'), 'orderable' => false, 'searchable' => false,],

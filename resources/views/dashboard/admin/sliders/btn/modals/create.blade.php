@@ -22,10 +22,10 @@
                     </div>
                     <!-- End Name -->
 
-                    {{--<div class="form-group">
+                    <div class="form-group">
                         <label>Image :  <span style="color:rgb(199, 8, 8)">*</span></label>
                         <input  class="form-control img" name="image"  type="file" accept="image/*" required >
-                    </div>--}}
+                    </div>
                     <br>
                     <!-- Start Notes -->
                     <div class="form-group">

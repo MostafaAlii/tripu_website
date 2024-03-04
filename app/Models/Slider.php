@@ -2,8 +2,9 @@
 namespace App\Models;
 use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Relations\{BelongsTo};
+use App\Models\Traits\HasImage;
 class Slider extends BaseModel {
-    use Translatable;
+    use Translatable, HasImage;
     protected $table = "sliders";
     protected $fillable = ['status','uuid', 'admin_id'];
     protected $with = ['translations'];
@@ -20,5 +21,9 @@ class Slider extends BaseModel {
 
      public function admin(): BelongsTo {
         return $this->belongsTo(related:Admin::class, foreignKey:'admin_id');
+    }
+
+    public function scopeActive($query) {
+        return $query->whereStatus(true) ;
     }
 }
