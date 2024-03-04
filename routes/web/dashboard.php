@@ -10,6 +10,7 @@ Route::group(
     ], function () {
     Route::group(['prefix' => 'admin', 'middleware' => 'auth:admin'], function () {
         Route::get('dashboard', [Dashboard\DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::resource('sliders', Dashboard\SliderController::class);
     });
     require __DIR__.'/../auth.php';
 });

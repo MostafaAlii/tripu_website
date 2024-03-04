@@ -17,7 +17,7 @@
           <div
             class="col-auto col-xl d-flex align-items-center justify-content-xl-center justify-content-end order-2 order-xl-1">
             <div class="menu-column-area d-none d-xl-block position-static">
-              <nav class="site-main-menu">
+              <nav class="site-main-menu m-1">
                 <ul>
                   <li>
                     <a href="#"><span class="menu-text">Home</span></a>
@@ -119,7 +119,7 @@
                   <li class="has-children">
                       <a href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           <span class="menu-text">
-                              <i class="fa-solid fa-earth-americas stylesvglang m-1"></i>
+                              <i class="fa-solid fa-earth-americas stylesvglang mr-1"></i>
                               {{ LaravelLocalization::getCurrentLocaleNative() }}
                           </span>
                       </a>
